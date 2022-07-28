@@ -4,25 +4,27 @@ import styled from "styled-components";
 const HeroComp = () => {
   const data = [
     {
-      title: "Get your",
-      special: "NGO",
-      title1: "to be found and Empowered",
+      title: "we have aligned our business models with",
+      special: "Sustainable Development Goal 2",
+      title1: "our business models with",
       subTitle:
-        "Create a new pipeline or choose an existing one and add this app to a stage in it.",
+        "We have also developed two Strategic Business Units, FC Foods and FC Shops, that facilitate stakeholder access.",
     },
     {
-      title: "You have",
-      special: "to be seen",
-      title1: "and heard by peaople that metters",
+      title: "our business models with",
+      special: "forms of hunger while promoting ",
+      title1:
+        "food security across the globe and heard by peaople that metters",
       subTitle:
-        "Create a new pipeline or choose an existing one and add this app to a stage in it.",
+        "We have also developed two Strategic Business Units, FC Foods and FC Shops, that facilitate stakeholder access to maximum profitability in the food value chain.",
     },
     {
-      title: "Make your",
-      special: "NGO's work",
-      title1: "one of the World Best",
+      title:
+        "Our tech-infused platform drives an enabling environment for farmers and sets up more",
+      special: "efficient food",
+      title1: "distribution channels",
       subTitle:
-        "Create a new pipeline or choose an existing one and add this app to a stage in it.",
+        "FC Foods and FC Shops, that facilitate stakeholder access to maximum profitability in the food value chain.",
     },
   ];
 
@@ -33,9 +35,9 @@ const HeroComp = () => {
   const textColor1 = useRef();
   const textColor2 = useRef();
 
-  const myColor = ["#35715D", "white", "white"];
-  const myColor1 = ["white", "#35715D", "white"];
-  const myColor2 = ["white", "white", "#35715D"];
+  const myColor = ["darkorange", "white", "white"];
+  const myColor1 = ["white", "darkorange", "white"];
+  const myColor2 = ["white", "white", "darkorange"];
 
   useEffect(() => {
     setInterval(() => {
@@ -59,23 +61,24 @@ const HeroComp = () => {
   return (
     <Container>
       {/* <Wrapper>Hero</Wrapper> */}
+      <Wrapper>
+        <Content>
+          <Title>
+            {data[count % quote.length].title}
+            <span>{data[count % quote.length].special}</span>
+            {data[count % quote.length].title1}
+          </Title>
+          <SubTitle>{data[count % quote.length].subTitle}</SubTitle>
 
-      <Content>
-        <Title>
-          {data[count % quote.length].title}
-          <span>{data[count % quote.length].special}</span>
-          {data[count % quote.length].title1}
-        </Title>
-        <SubTitle>{data[count % quote.length].subTitle}</SubTitle>
+          <Dots>
+            <Dot ref={textColor} />
+            <Dot ref={textColor1} />
+            <Dot ref={textColor2} />
+          </Dots>
 
-        <Dots>
-          <Dot ref={textColor} />
-          <Dot ref={textColor1} />
-          <Dot ref={textColor2} />
-        </Dots>
-
-        {/* <Button>Sign up to get started</Button> */}
-      </Content>
+          {/* <Button>Sign up to get started</Button> */}
+        </Content>
+      </Wrapper>
       <BgrColor />
     </Container>
   );
@@ -97,6 +100,7 @@ const Button = styled.div`
   transition: all 350ms;
   transform: scale(1);
   margin-top: 40px;
+
   animation: {
     animation-duration: 2s;
     animation-timing-function: linear;
@@ -174,8 +178,8 @@ const Image = styled.img`
 `;
 
 const Content = styled.div`
-  z-index: 1000;
-  width: 45%;
+  /* z-index: 1000; */
+  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -183,11 +187,9 @@ const Content = styled.div`
   height: 100%;
   color: white;
   margin-left: 30px;
-  /* align-items: center; */
 
   @media screen and (max-width: 800px) {
     width: 90%;
-    /* text-align: center; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -195,7 +197,13 @@ const Content = styled.div`
   }
 `;
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  z-index: 1;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  height: 100%;
+`;
 
 const BgrColor = styled.div`
   background: rgba(0, 0, 0, 0.5);
@@ -203,7 +211,7 @@ const BgrColor = styled.div`
   height: 100vh;
   position: absolute;
   top: 0;
-  z-index: 1;
+  /* z-index: 1; */
 `;
 const Container = styled.div`
   background-color: rgba(0, 0, 0, 0.5);
@@ -214,4 +222,5 @@ const Container = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  z-index: 0;
 `;

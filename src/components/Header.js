@@ -30,7 +30,13 @@ const Header = () => {
 
 export default Header;
 
-const Avatar = styled.div``;
+const Avatar = styled.div`
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: darkorange;
+  border: 1px solid silver;
+`;
 
 const Holder = styled.div`
   display: flex;
@@ -100,13 +106,12 @@ const Container = styled.div`
   width: 100%;
   height: 70px;
   position: fixed;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.7);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   display: flex;
   justify-content: center;
-
-  z-index: 1;
+  z-index: 2;
 `;
